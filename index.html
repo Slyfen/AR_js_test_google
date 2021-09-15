@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Viewer Exemple</title>
@@ -10,7 +10,10 @@
 
 
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    
+          <!-- Loads <model-viewer> for old browsers like IE11: -->
+      <script nomodule
+          src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
+      </script>
 
     <style>
         model-viewer{
@@ -43,3 +46,4 @@
 
 </body>
 </html>
+
