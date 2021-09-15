@@ -36,7 +36,13 @@
     
     <model-viewer id="model-viewer" src="models/SpinningOrbglb.glb"
                   ios-src="models/Spinning_Rings.usdz" camera-controls alt="A 3D model of an astronaut">
-  <div id="error" class="hide">AR is not supported on this device</div>
+
+
+
+                   <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      👋 Activate AR
+  </button>
+    <div id="error" class="hide">AR is not supported on this device</div>
     </model-viewer>
 
     <script>
