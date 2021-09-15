@@ -33,21 +33,47 @@
 <body>
   <div id="card">
     <!-- All you need to put beautiful, interactive 3D content on your site: -->
-    <model-viewer src="models/SpinningOrbglb.glb"
-                  ios-src="models/Spinning_Rings.usdz"
-                  alt="A 3D model of an astronaut"
-                  shadow-intensity="1"
-                  camera-controls
-                  interaction-prompt="auto"
-                  auto-rotate ar magic-leap>
+    
+    <model-viewer id="model-viewer" src="models/SpinningOrbglb.glb"
+                  ios-src="models/Spinning_Rings.usdz" camera-controls alt="A 3D model of an astronaut">
+  <div id="error" class="hide">AR is not supported on this device</div>
     </model-viewer>
+
+    <script>
+      document.querySelector("#model-viewer").addEventListener('ar-status', (event) => {
+        if(event.detail.status === 'failed'){
+          const error = document.querySelector("#error");
+          error.classList.remove('hide');
+          error.addEventListener('transitionend',(event) => {
+            error.classList.add('hide');
+          });
+        }
+      });
+    </script>
+    <style>
+      #error {
+        background-color: #ffffffdd;
+        border-radius: 16px;
+        padding: 16px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: opacity 0.3s;
+      }
+      #error.hide {
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 2s, opacity 1s 1s;
+      }
+    </style>
+
     
   </div>
   
   
   <footer>
-    <span>This page is a basic demo of the <a href="https://github.com/GoogleWebComponents/model-viewer" target="_blank">&lt;model-viewer&gt;</a> web component by AllInReality.</span>
-    <span>It makes displaying 3D and AR content on the web easy ✌️</span>
+    
   
   </footer>
   
