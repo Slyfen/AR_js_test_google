@@ -29,48 +29,40 @@
     <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
 
-
-
-    
-
     <style>
         model-viewer{
             width : 100%;
             height : 300px;
             margin : 0 auto;
         }
-    
-    
     </style>
 
   </head> 
-<body>
-  <div id="card">
-    <model-viewer src="models/Ceramiques1.glb"
-    auto-rotate ar ar-modes="webxr scene-viewer quick-look"              
-    
-   
-                  >
+    <body>
+      <div id="card">
+        <model-viewer src="models/Ceramiques_texture_compressed.glb"
+        camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look">
 
 
-    </model-viewer>
+        </model-viewer>
 
     
-  </div>
+      </div>
   
   
-  <footer>
+      <footer>
     
   
-  </footer>
+      </footer>
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-          <!-- Loads <model-viewer> for old browsers like IE11: -->
-      <script nomodule
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
-      </script>
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            
+      <!-- Loads <model-viewer> for old browsers like IE11: -->
+        <script nomodule
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+        </script>
 
 
-</body>
+    </body>
 </html>
 
